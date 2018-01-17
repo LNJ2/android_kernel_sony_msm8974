@@ -248,6 +248,9 @@ void wlan_hdd_tdls_extract_da(struct sk_buff *skb, u8 *mac);
 
 void wlan_hdd_tdls_extract_sa(struct sk_buff *skb, u8 *mac);
 
+tdlsConnInfo_t *wlan_hdd_get_conn_info(hdd_context_t *pHddCtx,
+                                       tANI_U8 idx);
+
 int wlan_hdd_tdls_increment_pkt_count(hdd_adapter_t *pAdapter,
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(3,18,0))
                                       const u8 *mac,
@@ -487,10 +490,6 @@ wlan_hdd_tdls_reenable(hdd_context_t *pHddCtx)
 #endif
 void wlan_hdd_tdls_update_rx_pkt_cnt_n_rssi(hdd_adapter_t *pAdapter,
         u8 *mac, v_S7_t rssiAvg);
-
-
-tdlsConnInfo_t *wlan_hdd_get_conn_info(hdd_context_t *pHddCtx,
-                                       tANI_U8 idx);
 
 v_VOID_t wlan_hdd_tdls_initiator_wait_cb(v_PVOID_t userData);
 
